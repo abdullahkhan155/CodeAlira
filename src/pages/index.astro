@@ -1,0 +1,218 @@
+---
+import "../styles.css";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alira - Personalizing College Dining</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+    />
+  </head>
+
+  <body>
+    <!-- HEADER & NAVIGATION -->
+    <header class="header">
+      <nav class="navbar container">
+        <div class="logo">Alira</div>
+        <ul class="nav-links">
+          <li><a href="#benefits">Benefits</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+        </ul>
+        <button class="cta-button nav-cta">Find Meals</button>
+      </nav>
+    </header>
+
+    <!-- HERO SECTION (Green Gradient) -->
+    <section class="hero-section fancy-diagonal">
+      <div class="hero-overlay"></div>
+      <!-- Note: The moving particle background has been removed per your request -->
+      <div class="hero-content container">
+        <div class="hero-text fade-in-up">
+          <h1 class="hero-title">
+            Hello, I’m <span class="alira-gradient">Alira</span>, your campus dining assistant!
+          </h1>
+          <p class="hero-subtitle">
+            Quickly discover when and where your favorite meals are served.
+            Save time, satisfy cravings, and make campus dining a breeze.
+          </p>
+          <!-- "Explore Now" button removed as requested -->
+        </div>
+      </div>
+    </section>
+
+    <!-- RUTGERS SECTION (White) -->
+    <section class="rutgers-section fancy-diagonal" id="rutgers">
+      <div class="container fade-in-up">
+        <h2 class="wow-section-title">Now Serving Rutgers</h2>
+        <p class="section-description">
+          Alira is proud to serve Rutgers University. Explore our custom Rutgers 
+          dining platform to see real-time menus, special alerts, and more!
+        </p>
+        <div class="rutgers-card glow-hover">
+          <h3>Rutgers University</h3>
+          <p>Tap or click below to explore the Rutgers Alira experience.</p>
+          <button class="cta-button campus-cta">
+            Visit Rutgers Alira
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- BENEFITS SECTION (Light Green) -->
+    <section id="benefits" class="benefits-section fancy-diagonal">
+      <div class="container fade-in-up">
+        <h2 class="wow-section-title">Why Students Love Alira</h2>
+        <div class="benefit-list">
+          <!-- Save Time (clock icon) -->
+          <div class="benefit-item glow-hover">
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/856/856810.png"
+              alt="Cartoon clock icon"
+              class="benefit-icon"
+            />
+            <h3>Save Time</h3>
+            <p>
+              No more endlessly scrolling through menus. Spend more time enjoying campus life!
+            </p>
+          </div>
+
+          <!-- Never Miss Out (notification bell icon) -->
+          <div class="benefit-item glow-hover">
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/1827/1827392.png"
+              alt="Notification bell icon"
+              class="benefit-icon"
+            />
+            <h3>Never Miss Out</h3>
+            <p>
+              Get real-time alerts on your phone whenever your favorite meals appear.
+            </p>
+          </div>
+
+          <!-- Stay Organized (checklist icon, original) -->
+          <div class="benefit-item glow-hover">
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/3039/3039405.png"
+              alt="Checklist icon"
+              class="benefit-icon"
+            />
+            <h3>Stay Organized</h3>
+            <p>
+              Seamlessly plan meals around classes, clubs, and other commitments.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION (Pastel Green) -->
+    <section id="testimonials" class="testimonials-section fancy-diagonal">
+      <div class="container fade-in-up">
+        <h2 class="wow-section-title">What Our Users Say</h2>
+        <div class="testimonial-carousel">
+          <div class="testimonial-track">
+            <div class="testimonial-card">
+              <p class="testimonial-quote">
+                "Alira helped me find meals so fast. My friends think I have a dining hall radar!"
+              </p>
+              <h4>Emily, Sophomore</h4>
+            </div>
+            <div class="testimonial-card">
+              <p class="testimonial-quote">
+                "The notifications feature is a total game-changer. Never missed Taco Tuesday again."
+              </p>
+              <h4>Jake, Freshman</h4>
+            </div>
+            <div class="testimonial-card">
+              <p class="testimonial-quote">
+                "Planning my meals used to take 10 minutes every morning. Alira does it in seconds."
+              </p>
+              <h4>Sarah, Junior</h4>
+            </div>
+            <!-- Duplicates for infinite loop -->
+            <div class="testimonial-card">
+              <p class="testimonial-quote">
+                "Alira helped me find meals so fast. My friends think I have a dining hall radar!"
+              </p>
+              <h4>Emily, Sophomore</h4>
+            </div>
+            <div class="testimonial-card">
+              <p class="testimonial-quote">
+                "The notifications feature is a total game-changer. Never missed Taco Tuesday again."
+              </p>
+              <h4>Jake, Freshman</h4>
+            </div>
+            <div class="testimonial-card">
+              <p class="testimonial-quote">
+                "Planning my meals used to take 10 minutes every morning. Alira does it in seconds."
+              </p>
+              <h4>Sarah, Junior</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER (Green) -->
+    <footer class="footer">
+      <div class="footer-content container">
+        <div class="footer-logo">Alira</div>
+        <ul class="footer-links">
+          <li><a href="#benefits">Benefits</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+        </ul>
+        <p>&copy; 2025 Alira. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <!-- Plain JS for Auto-Scrolling Testimonials and Header Scroll Effects -->
+    <script>
+      // Auto-scrolling testimonial code
+      const track = document.querySelector('.testimonial-track');
+      let scrollAmount = 0;
+      let scrollMax = 0;
+      let paused = false;
+
+      track.addEventListener('mouseenter', () => { paused = true; });
+      track.addEventListener('mouseleave', () => { paused = false; });
+
+      function autoScroll() {
+        if (!paused) {
+          scrollAmount += 0.7;
+          if (scrollAmount >= scrollMax) {
+            scrollAmount = 0;
+          }
+          track.style.transform = 'translateX(-' + scrollAmount + 'px)';
+        }
+        requestAnimationFrame(autoScroll);
+      }
+
+      function updateScrollMax() {
+        scrollMax = track.scrollWidth / 2;
+      }
+
+      window.addEventListener('load', () => {
+        updateScrollMax();
+        requestAnimationFrame(autoScroll);
+      });
+
+      window.addEventListener('resize', updateScrollMax);
+
+      // Header shadow on scroll
+      window.addEventListener('scroll', () => {
+        const header = document.querySelector('.header');
+        if(window.scrollY > 10){
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      });
+    </script>
+  </body>
+</html>
