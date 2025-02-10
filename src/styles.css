@@ -1,13 +1,9 @@
-/* -------------------------------------------------- */
-/* GLOBAL RESETS & FONTS */
-/* -------------------------------------------------- */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-/* WOW EFFECT #1: Smooth scroll behavior */
 html {
   scroll-behavior: smooth;
 }
@@ -25,7 +21,6 @@ body {
   background-color: var(--white);
   color: #2b2b2b;
   overflow-x: hidden;
-  /* NEW #14: Subtle background noise texture */
   position: relative;
 }
 body::after {
@@ -36,7 +31,7 @@ body::after {
   width: 100%;
   height: 100%;
   pointer-events: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' result='noise'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' fill='%23ccc'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg ...");
   opacity: 0.05;
   z-index: -2;
 }
@@ -45,13 +40,8 @@ body::after {
   width: 90%;
   max-width: 1200px;
   margin: 0 auto;
-  /* NEW #12: Subtle container shadow (optional) */
-  /* box-shadow: 0 2px 5px rgba(0,0,0,0.05); */
 }
 
-/* -------------------------------------------------- */
-/* HEADER & NAV */
-/* -------------------------------------------------- */
 .header {
   background-color: var(--main-green);
   position: sticky;
@@ -60,8 +50,6 @@ body::after {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s ease;
 }
-
-/* WOW EFFECT #8: Header shadow when scrolled */
 .header.scrolled {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
@@ -71,7 +59,6 @@ body::after {
   align-items: center;
   justify-content: space-between;
   padding: 1rem 0;
-  /* NEW #13: Nav bar bottom border highlight on hover */
   border-bottom: 2px solid transparent;
   transition: border-color 0.3s;
 }
@@ -86,7 +73,6 @@ body::after {
   cursor: pointer;
   transition: transform 0.2s;
 }
-/* WOW EFFECT #9: Logo pulse on hover */
 .logo:hover {
   transform: scale(1.05);
   animation: pulse 1s infinite;
@@ -109,7 +95,6 @@ body::after {
   transition: color 0.2s, transform 0.2s;
   position: relative;
 }
-/* WOW EFFECT #5: Nav underline animation */
 .nav-links li a::after {
   content: "";
   position: absolute;
@@ -127,7 +112,6 @@ body::after {
   color: #c6f6d5;
   transform: scale(1.05);
 }
-/* NEW #15: Nav links active (click) effect */
 .nav-links li a:active {
   transform: scale(0.95);
   transition: transform 0.1s;
@@ -148,7 +132,6 @@ body::after {
   background-color: #c6f6d5;
   transform: scale(1.05);
 }
-/* WOW EFFECT #2: Button ripple effect */
 .cta-button::after {
   content: "";
   position: absolute;
@@ -166,18 +149,14 @@ body::after {
   opacity: 0;
   transition: 0s;
 }
-/* NEW #3: Button focus border glow */
 .cta-button:focus, .nav-cta:focus, .campus-cta:focus {
   outline: none;
   box-shadow: 0 0 0 3px rgba(46, 204, 113, 0.5);
 }
 
-/* -------------------------------------------------- */
-/* FANCY DIAGONAL CLASSES & SVG WAVE DIVIDER */
-/* -------------------------------------------------- */
 .fancy-diagonal {
   position: relative;
-  padding: 4rem 0;
+  padding: 2rem 0;
   z-index: 1;
   overflow: hidden;
 }
@@ -192,7 +171,6 @@ body::after {
   clip-path: polygon(0 0, 100% 100%, 100% 0);
   z-index: -1;
 }
-/* SVG wave divider at bottom */
 .fancy-diagonal::after {
   content: "";
   position: absolute;
@@ -200,74 +178,58 @@ body::after {
   left: 0;
   width: 100%;
   height: 100px;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%232f855a' fill-opacity='1' d='M0,256L1440,160L1440,320L0,320Z'%3E%3C/path%3E%3C/svg%3E") no-repeat bottom center;
+  background: url("data:image/svg+xml,%3Csvg ...");
   background-size: cover;
   z-index: -1;
 }
 
-/* -------------------------------------------------- */
-/* HERO (Green Gradient) */
-/* -------------------------------------------------- */
 .hero-section {
-  background: linear-gradient(
-    135deg,
-    rgba(47,133,90,1) 0%,
-    rgba(102,187,106,1) 100%
-  ) !important;
-  background-attachment: fixed;
-  /* NEW #1: Animated gradient shift */
-  background-size: 200% 200%;
-  animation: gradientShift 10s ease infinite;
-  /* Adjusted spacing to reduce extra empty space */
-  padding-top: 4rem;
-  padding-bottom: 4rem;  /* Reduced from 6rem to 4rem */
+  position: relative;
+  background: linear-gradient(135deg, #2f855a, #66bb6a);
+  padding: 3rem 0;
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
 }
-@keyframes gradientShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+.hero-section::before {
+  content: none !important;
 }
-.hero-overlay {
+.hero-section::after {
+  content: "";
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
   width: 100%;
-  height: 100%;
-  opacity: 0.2;
-  background: url("data:image/svg+xml,%3Csvg width='100%25'...") /* existing overlay */;
-  z-index: 1;
+  height: 100px;
+  background-color: #2f855a;
+  clip-path: polygon(0 0, 100% 100%, 100% 0);
+  z-index: -1;
 }
 
 .hero-content {
   position: relative;
   z-index: 2;
   width: 100%;
-  text-align: center;
-  color: #ffffff;
-  /* Reduced bottom padding for tighter layout */
-  padding-bottom: 1rem;  /* Reduced from 2rem to 1rem */
+  margin: 0 auto;
 }
 
 .hero-text {
-  margin-bottom: 1rem;  /* Reduced from 1.5rem to 1rem */
+  margin-bottom: 1rem;
 }
 
 .hero-title {
-  font-size: clamp(2rem, 5vw, 2.5rem); /* NEW #13: Responsive font scaling */
+  font-size: clamp(2rem, 5vw, 2.5rem);
   line-height: 1.2;
   font-weight: 800;
-  margin-bottom: 1rem;
-  /* NEW #4: Animated text-shadow on hover */
-  transition: text-shadow 0.3s;
-}
-.hero-title:hover {
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  margin-bottom: 2rem;
 }
 
 .alira-gradient {
-  background: linear-gradient(to right, #a7f3d0, #34d399);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  background: none;
+  -webkit-background-clip: none;
+  -webkit-text-fill-color: #ffffff;
+  color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .hero-subtitle {
@@ -276,29 +238,6 @@ body::after {
   line-height: 1.6;
 }
 
-.hero-cta {
-  background-color: #ffffff;
-  color: var(--main-green);
-  font-weight: 700;
-  padding: 0.8rem 1.2rem;
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
-  transition: transform 0.2s, background-color 0.2s;
-}
-.hero-cta:hover {
-  background-color: #c6f6d5;
-  transform: scale(1.05);
-}
-
-/* Glow on hover */
-.glow-hover:hover {
-  box-shadow: 0 0 15px var(--main-glow);
-}
-
-/* -------------------------------------------------- */
-/* RUTGERS SECTION (White) */
-/* -------------------------------------------------- */
 .rutgers-section {
   background-color: var(--white);
 }
@@ -334,20 +273,11 @@ body::after {
 .campus-cta:hover {
   background-color: #16c79a;
   transform: scale(1.05);
-  /* NEW #8: Pulse animation on campus CTA button */
-  animation: pulseButton 1s infinite;
-}
-@keyframes pulseButton {
-  0% { transform: scale(1.05); }
-  50% { transform: scale(1.1); }
-  100% { transform: scale(1.05); }
 }
 
-/* -------------------------------------------------- */
-/* BENEFITS (Light Green) */
-/* -------------------------------------------------- */
 .benefits-section {
   background-color: var(--light-green);
+  padding: 2rem 0;
 }
 .benefit-list {
   display: flex;
@@ -364,17 +294,11 @@ body::after {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
   transition: transform 0.2s, border-color 0.3s;
   text-align: center;
-  animation: float 3s ease-in-out infinite;
-  /* NEW #5: Animated border on benefit cards */
   border: 2px solid transparent;
 }
 .benefit-item:hover {
   transform: translateY(-5px);
   border-color: var(--main-green);
-}
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
 }
 .benefit-item h3 {
   margin: 1rem 0 0.8rem;
@@ -387,42 +311,31 @@ body::after {
   margin: 0 auto 0.8rem;
   transition: transform 0.6s;
 }
-/* NEW #9: Animated icon flip for benefit icons on hover */
 .benefit-icon:hover {
   transform: rotateY(360deg) scale(1.1);
 }
 
-/* -------------------------------------------------- */
-/* TESTIMONIALS (Pastel Green) */
-/* -------------------------------------------------- */
 .testimonials-section {
   background-color: var(--pastel-green);
+  padding: 4rem 0;
 }
-.testimonial-carousel {
-  margin-top: 2rem;
-  overflow: hidden;
-  position: relative;
-  width: 100%;
-}
-.testimonial-track {
+.testimonial-container {
   display: flex;
+  flex-wrap: wrap;
   gap: 2rem;
-  padding: 1rem 2rem;
-  transition: transform 0.2s linear;
+  justify-content: center;
+  margin-top: 2rem;
 }
 .testimonial-card {
-  background: rgba(255, 255, 255, 0.6); /* NEW #6: Glassmorphism effect */
-  backdrop-filter: blur(5px);
-  min-width: 280px;
-  max-width: 280px;
+  background: #ffffff;
   padding: 1.5rem;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  flex-shrink: 0;
+  width: 300px;
   transition: transform 0.3s, box-shadow 0.3s;
 }
 .testimonial-card:hover {
-  transform: scale(1.05);
+  transform: scale(1.02);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 .testimonial-quote {
@@ -431,13 +344,10 @@ body::after {
   color: #555;
 }
 
-/* -------------------------------------------------- */
-/* FOOTER (Green) */
-/* -------------------------------------------------- */
 .footer {
   background: linear-gradient(135deg, var(--main-green), #16c79a);
   background-size: 200% 200%;
-  animation: footerGradient 15s ease infinite;  /* NEW #11: Animated footer gradient */
+  animation: footerGradient 15s ease infinite;
   padding: 2rem 0;
   color: #ffffff;
   text-align: center;
@@ -493,18 +403,14 @@ body::after {
   color: #e1e1e1;
 }
 
-/* -------------------------------------------------- */
-/* WOW: Hover effect on section headings */
-/* -------------------------------------------------- */
-.wow-section-title:hover {
+.section-title {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-weight: 700;
   color: var(--main-green);
-  transform: scale(1.02);
-  transition: transform 0.3s, color 0.3s;
 }
 
-/* -------------------------------------------------- */
-/* FADE-IN-UP ANIMATION */
-/* -------------------------------------------------- */
 @keyframes fadeUp {
   0% {
     opacity: 0;
@@ -520,9 +426,6 @@ body::after {
   opacity: 0;
 }
 
-/* -------------------------------------------------- */
-/* CUSTOM SCROLLBAR */
-/* -------------------------------------------------- */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -537,11 +440,7 @@ body::after {
   background: #16c79a;
 }
 
-/* -------------------------------------------------- */
-/* RESPONSIVE BREAKPOINTS (Mobile-Friendly) */
-/* -------------------------------------------------- */
 @media (max-width: 768px) {
-  /* Reduce hero title size and adjust spacing */
   .hero-title {
     font-size: 2rem;
   }
@@ -549,9 +448,8 @@ body::after {
     font-size: 1rem;
   }
   .hero-content {
-    padding: 0 1rem 1rem;  /* Adjusted inner padding */
+    padding: 0 1rem 1rem;
   }
-  /* Benefits: Stack items and use wider cards */
   .benefit-list {
     flex-direction: column;
     align-items: center;
@@ -559,16 +457,13 @@ body::after {
   .benefit-item {
     width: 90%;
   }
-  /* Testimonial adjustments: Show one card per view */
-  .testimonial-track {
-    gap: 1rem;
-    padding: 1rem;
+  .testimonial-container {
+    flex-direction: column;
+    align-items: center;
   }
   .testimonial-card {
-    min-width: 90%;
-    max-width: 90%;
+    width: 90%;
   }
-  /* Navigation: Reduce gap and font size slightly */
   .nav-links {
     gap: 1rem;
     font-size: 0.9rem;
